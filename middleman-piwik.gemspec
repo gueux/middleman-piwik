@@ -16,4 +16,8 @@ Gem::Specification.new do |s|
   s.test_files = `git ls-files -z -- {fixtures,features}/*`.split("\0")
   s.require_paths = ["lib"]
   s.add_runtime_dependency("middleman-core", [">= 3.2"])
+  # Middleman 3.4.1 requires "uglifier ~> 2.5"
+  # Middleman 4.1.7 requires "uglifier ~> 3.0"
+  s.add_dependency('uglifier', ['>= 2.5', '< 4.0'])
+  s.add_dependency('erubis')
 end
